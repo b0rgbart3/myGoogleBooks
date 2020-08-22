@@ -1,7 +1,7 @@
-# projectAct
+# myGoogleBooks
 Full Stack MERN application to search for books from the Google Book API, and store them in a Mongo data base.
 
-![screenshot](screenshot)
+![screenshot.jpg](screenshot.jpg)
 # Table of contents
 1. [Installation](#Installation)
 2. [Usage](#Usage)
@@ -24,15 +24,15 @@ npm start
 ```
 <a name="Live_Demo"></a>
 ## Live Demo
-live demo url
+<a href="https://serene-sands-53576.herokuapp.com/">Live Demo on Heroku</a>
 <a name='License'></a>
 ## License
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 <a name="Features"></a>
 ## Features
 1. search for books
-2.  save books
-3.  delete books
+2. save books
+3. delete books
 <a name="Technology"></a>
 ## Technology
 1. Express
