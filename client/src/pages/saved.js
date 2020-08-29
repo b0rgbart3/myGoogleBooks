@@ -30,6 +30,11 @@ function Saved() {
 
           API.deleteBook(id).then( dispatch({ type: DELETE_BOOK, id})).catch( err =>  console.log(err) );
       }
+      function sendMail() {
+          API.sendMail().then( (result) => {
+              console.log("sentmail");
+          }).catch(err=>console.log(err));
+      }
 
     return (
         <div className="container" style={{backgroundColor:"#ffffff", padding:"10px"}}>
@@ -49,6 +54,7 @@ function Saved() {
 
                         <button onClick={()=>removeBook( book._id )}>
                         Remove Book</button>
+                        <button onClick={()=>sendMail()}>Send mail</button>
                    
                 </div>)
             })

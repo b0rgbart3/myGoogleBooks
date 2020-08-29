@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const booksController = require("../../controllers/booksController");
 
+router.route("/sendmail")
+    .post(booksController.sendmail)
 // Matches with "/api/books"
 router.route("/books")
 

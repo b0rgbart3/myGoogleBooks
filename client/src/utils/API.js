@@ -5,10 +5,12 @@ export default {
   // Gets all books
 
 
-
+  sendMail: function(info) {
+    return axios.post("/api/sendMail", info);
+  },
   getBooks: function() {
     return axios.get("/api/books");
-
+   // return axios.get("/api/sendmail");
   },
   // Gets the book with the given id
 //   getBook: function(id) {
