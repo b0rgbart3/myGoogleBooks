@@ -4,7 +4,9 @@ import { useBookContext } from "../utils/GlobalState";
 export default {
   // Gets all books
 
-
+  nodeMail: function(info) {
+    return axios.post("/api/nodeMail", info);
+  },
   sendMail: function(info) {
     return axios.post("/api/sendMail", info);
   },

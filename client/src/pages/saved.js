@@ -30,6 +30,11 @@ function Saved() {
 
           API.deleteBook(id).then( dispatch({ type: DELETE_BOOK, id})).catch( err =>  console.log(err) );
       }
+      function nodeMail() {
+          API.nodeMail().then( (result) => {
+              console.log("sent node mail");
+          }).catch(err=>console.log(err));
+      }
       function sendMail() {
           API.sendMail().then( (result) => {
               console.log("sentmail");
@@ -55,6 +60,7 @@ function Saved() {
                         <button onClick={()=>removeBook( book._id )}>
                         Remove Book</button>
                         <button onClick={()=>sendMail()}>Send mail</button>
+                        <button onClick={nodeMail}>Send Node Mail</button>
                    
                 </div>)
             })
