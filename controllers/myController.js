@@ -35,35 +35,41 @@ async function main( messageObject ) {
   });
 
   // send mail with defined transport object
-  let info = await transporter.sendMail({
-    from: '"Bart Dority" <b0rgBart3@gmail.com>', // sender address
-    to: "bartdority@gmail.com, b0rgBart3@gmail.com", // list of receivers
-    subject: "Hello ✔", // Subject line
-    text: "Hello world?", // plain text body
-    html: "<b>Hello world?</b>", // html body
-  });
+  // let info = await transporter.sendMail({
+  //   from: '"Bart Dority" <b0rgBart3@gmail.com>', // sender address
+  //   to: "bartdority@gmail.com, b0rgBart3@gmail.com", // list of receivers
+  //   subject: "Hello ✔", // Subject line
+  //   text: "Hello world?", // plain text body
+  //   html: "<b>Hello world?</b>", // html body
+  // });
 
   // Send two email messages -- first, send this message on to myself,
   // so that I know someone filled out my form.
   // Secondly, I want to send whomever filled it out a "receipt".
-  let textMessage = "You have received the following message from your contact form on your website.\n";
-  textMessage += "--------------\n";
-  textMessage += "From: " + messageObject.first_name + " " + messageObject.last_name + "\n";
-  textMessage += "Email: " + messageObject.email + "\n";
-  textMessage += "\n";
-  textMessage += "Their Message:\n";
+  let textMessage = "You have received the following message from your contact form on your website.\t\n";
+  textMessage += "--------------\t\n";
+  textMessage += "From: " + messageObject.fullname + "\t\n";
+  textMessage += "Email: " + messageObject.email + "\t\n";
+  textMessage += "\t\n";
+  textMessage += "Their Message:\t\n";
   textMessage += messageObject.message;
-  textMessage += "-------------\nEnd of Transmission.\n\n";
-  console.log(typeof(textMessage));
+  textMessage += "\t\n-------------\t\nEnd of Transmission.\t\n\t\n";
+
+  let htmlMessage = "<div><h1>Message from your Porfolio website:</h1>";
+  htmlMessage += "<p><strong>From: </strong>" + messageObject.full_name +"</p>";
+  htmlMessage += "<p><strong>Email: </strong>" + messageObject.email + "</p>";
+  htmlMessage += "<p></p><h2>Their Message:</h2><p>" + messageObject.message + "</p>";
+  htmlMessage += "<p>----------</p><p>End of transmission.</p>";
+  htmlMessage += "</div>";
 
 
-  // let info = await transporter.sendMail({
-  //   from: '"Bart Dority" <b0rgBart3@gmail.com>', // sender address
-  //   to: "b0rgBart3@gmail.com", // list of receivers
-  //   subject: "A Message from your Porftolio Website", // Subject line
-  //   text: textMessage, // plain text body
-  //   html: "<div>"+textMessage+"</div>", // html body
-  // })
+  let info = await transporter.sendMail({
+    from: '"Bart Dority" <b0rgBart3@gmail.com>', // sender address
+    to: "b0rgBart3@gmail.com", // list of receivers
+    subject: "A Message from your Porftolio Website", // Subject line
+    text: textMessage, // plain text body
+    html:htmlMessage, // html body
+  })
 
   console.log("Message sent: %s", info.messageId);
   //return info.messageId;
