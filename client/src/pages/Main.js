@@ -1,8 +1,8 @@
 import React from "react";
-import "./Home.css";
+import "./Main.css";
 import mug from "../images/bartdority_pic1.jpg";
 
-function Home() {
+function Main() {
   return (
     <div className="Home group">
       <div className="homeColumn1">
@@ -61,4 +61,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Main;
