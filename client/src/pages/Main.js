@@ -13,7 +13,7 @@ function Main() {
         </div>
         <div className="homebody">
           <div className="hometag">
-            Full Stack Developer / <span className="nobr">Software Engineer</span>
+            <span className="nobr">Software Engineer</span>
           </div>
           <div className="homebio">
             Full Stack Web Developer with a deep knowledge of a broad range of
