@@ -1,5 +1,3 @@
-export const GET_ALL_BOOKS = 'GET_ALL_BOOKS';
-export const SAVE_BOOK = 'SAVE_BOOK';
-export const DELETE_BOOK = 'DELETE_BOOK';
-export const LOADING = 'LOADING';
-export const SEARCH_RESULTS = 'SEARCH_RESULTS';
+export const OPEN_MENU = 'OPEN_MENU';
+export const CLOSE_MENU = 'CLOSE_MENU';
+export const SET_CLASS = 'SET_CLASS';

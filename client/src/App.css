@@ -1,24 +1,76 @@
+@import url("https://use.typekit.net/eoa5mqu.css");
+
+html {
+  background-color: #282c34;
+  margin:0;
+  padding:0;
+
+}
+body {
+  margin:0;
+  padding:0;
+  min-height:100vh;
+  background: rgb(40,44,52);
+  background: linear-gradient(142deg, rgba(40,44,52,1) 36%, rgba(27,59,122,1) 100%);
+}
+
+.medium {
+font-family: futura-pt, sans-serif;
+font-weight: 500;
+font-style: normal;
+}
+
+.book {
+  font-family: futura-pt, sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
+.demi {
+  font-family: futura-pt, sans-serif;
+font-weight: 600;
+font-style: normal;
+}
+
+.futBold {
+  font-family: futura-pt-bold, sans-serif;
+font-weight: 700;
+font-style: normal;
+}
+
+header {
+  font-family: futura-pt, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size:44px;
+}
+
 .App {
   text-align: center;
+  color:white;
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  position: relative;
 }
+.nobr	{ white-space:nowrap; }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+a {
+  text-decoration:none;
+  color:black;
+  cursor: pointer;
+  user-select: none;
 }
+/*  ClearFix  */
+/*  The ClearFix by Tony Aslett and Nicholas Gallagher */
+.group:before,
+.group:after {
+content: "";
+display: table; }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
+.group:after {
+clear: both; }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+.group {
+zoom: 1;
+/* IE6&7 */ }

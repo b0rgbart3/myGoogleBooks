@@ -18,10 +18,10 @@ var request = sg.emptyRequest({
 const nodemailer = require("nodemailer");
 
 // async..await is not allowed in global scope, must use a wrapper
-async function main() {
+async function main( messageObject ) {
   // Generate test SMTP service account from ethereal.email
   // Only needed if you don't have a real mail account for testing
-  let testAccount = await nodemailer.createTestAccount();
+   let testAccount = await nodemailer.createTestAccount();
 
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
@@ -43,7 +43,30 @@ async function main() {
     html: "<b>Hello world?</b>", // html body
   });
 
+  // Send two email messages -- first, send this message on to myself,
+  // so that I know someone filled out my form.
+  // Secondly, I want to send whomever filled it out a "receipt".
+  let textMessage = "You have received the following message from your contact form on your website.\n";
+  textMessage += "--------------\n";
+  textMessage += "From: " + messageObject.first_name + " " + messageObject.last_name + "\n";
+  textMessage += "Email: " + messageObject.email + "\n";
+  textMessage += "\n";
+  textMessage += "Their Message:\n";
+  textMessage += messageObject.message;
+  textMessage += "-------------\nEnd of Transmission.\n\n";
+  console.log(typeof(textMessage));
+
+
+  // let info = await transporter.sendMail({
+  //   from: '"Bart Dority" <b0rgBart3@gmail.com>', // sender address
+  //   to: "b0rgBart3@gmail.com", // list of receivers
+  //   subject: "A Message from your Porftolio Website", // Subject line
+  //   text: textMessage, // plain text body
+  //   html: "<div>"+textMessage+"</div>", // html body
+  // })
+
   console.log("Message sent: %s", info.messageId);
+  //return info.messageId;
   // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
 
 }
@@ -54,7 +77,7 @@ module.exports = {
   nodemail: function(req, res) {
     console.log("Sending Nodemail:",req.body);
 
-    main().catch(console.error);
+    main(req.body).catch(console.error);
     res.end();
   },
   sendmail: function(req, res) {
