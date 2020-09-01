@@ -35,7 +35,7 @@ function Home() {
       </div>
       <div className="homeColumn2">
         <div className="mugContainer">
-          <img src={mug} className="mug" />
+          <img src={mug} className="mug" alt="Bart Dority"/>
         </div>
       </div>
       <div className="homebodyMobile">

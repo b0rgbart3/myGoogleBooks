@@ -1,13 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-
 import { PortfolioProvider } from "./utils/GlobalState";
 import Menu from "./components/Menu"
+import Home from "./pages/Home"
 import Projects from "./pages/Projects"
 import Resume from "./pages/Resume"
 import Contact from "./pages/Contact"
-
 import NoMatch from "./pages/NoMatch";
 
 
