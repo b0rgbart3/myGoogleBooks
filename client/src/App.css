@@ -22,3 +22,19 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+
+/*  ClearFix  */
+/*  The ClearFix by Tony Aslett and Nicholas Gallagher */
+.group:before,
+.group:after {
+content: "";
+display: table; }
+
+.group:after {
+clear: both; }
+
+.group {
+zoom: 1;
+/* IE6&7 */ }

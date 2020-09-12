@@ -26,7 +26,7 @@ function ResultsList() {
   console.log("Our current state object: " + JSON.stringify(state));
 
   return (
-    <div className="container">
+    <div>
       <ul>
       <h4>Results</h4>
         <ul className="collection with-header">

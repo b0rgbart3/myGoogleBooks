@@ -36,7 +36,7 @@ function SearchBar() {
   }
 
   return (
-    <div className="container">
+   
       <div className="card #1565c0 blue darken-3">
 
           <h3 className="">Search for a book</h3>
@@ -57,7 +57,7 @@ function SearchBar() {
           </div>
         </nav>
       </div>
-    </div>
+   
   );
 }
 

@@ -12,17 +12,6 @@ function Home(){
           <Jumbotron />
           <SearchBar/>
           <ResultsList />
-      {/* <ul>
-        <ul className="collection with-header">
-            
-          <li className="collection-header">
-            <h4>Results</h4>
-          </li>
-
-            <li className="collection-item"></li>
-          
-        </ul>
-      </ul> */}
     </div>
     )
 }

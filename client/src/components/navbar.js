@@ -1,30 +1,27 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import "./navbar.css";
 
-const Styles = {
-    nav: {
-        fontWeight: 900,
-        fontSize: "26px"
-    }
-}
+
 function Navbar() {
   const location = useLocation();
 
   return (
-    <nav>
-  <div className="nav-wrapper #1976d2 blue darken-2">
-    <Link to="/" className="left" style={Styles.nav}>Books</Link>
-    <ul className="right hide-on-med-and-down">
+
+  <div className="gNavBar group">
+    <Link to="/"><div className='logo'>My Google Books</div></Link>
+    <ul className="navlinks group">
 
     {/* to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"} */}
-    <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"} >
-      <li> Search</li></Link>
     <Link to="/saved" className={location.pathname === "/saved" ? "nav-link active" : "nav-link"}>
-      <li>Saved</li></Link>
+      <li className="navLinker">Saved</li></Link>
+    <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"} >
+      <li className="navLinker"> Search</li></Link>
+
 
     </ul>
   </div>
-</nav>
+
   );
 }
 
