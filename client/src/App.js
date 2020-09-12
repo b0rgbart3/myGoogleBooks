@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/navbar"
-import Footer from "./components/footer"
-
-import { BookProvider } from "./utils/GlobalState";
-import  Home  from './pages/home';
-import Saved  from './pages/saved';
+import { PortfolioProvider } from "./utils/GlobalState";
+import Menu from "./components/Menu"
+import Main from "./pages/Main"
+import Projects from "./pages/Projects"
+import Resume from "./pages/Resume"
+import Contact from "./pages/Contact"
 import NoMatch from "./pages/NoMatch";
 
 
@@ -14,19 +14,19 @@ import NoMatch from "./pages/NoMatch";
 function App() {
   return (
     <Router>
-      <div>
-        <BookProvider>
-          <Navbar />
-
+     <div className="App group">
+        <PortfolioProvider>
+        <Menu/>
 
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/saved" component={Saved} />
+            <Route exact path="/" component={Main} />
+            <Route exact path="/projects" component={Projects} />
+            <Route exact path="/resume" component={Resume} />
+            <Route exact path="/contact" component={Contact} />
             <Route component={NoMatch} />
           </Switch>
-          <Footer></Footer>
-        </BookProvider>
+   
+        </PortfolioProvider>
       </div>
     </Router>
   );

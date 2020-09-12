@@ -1,14 +1,18 @@
 import axios from "axios";
-import { useBookContext } from "../utils/GlobalState";
 
 export default {
   // Gets all books
 
-
-
+  nodeMail: function(info) {
+    console.log("About to send email: ", info);
+    return axios.post("/api/nodeMail", info);
+  },
+  // sendMail: function(info) {
+  //   return axios.post("/api/sendMail", info);
+  // },
   getBooks: function() {
     return axios.get("/api/books");
-
+   // return axios.get("/api/sendmail");
   },
   // Gets the book with the given id
 //   getBook: function(id) {

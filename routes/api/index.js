@@ -1,24 +1,29 @@
 const router = require("express").Router();
-const booksController = require("../../controllers/booksController");
+const myController = require("../../controllers/myController");
 
+router.route("/nodemail")
+    .post(myController.nodemail)
+
+// router.route("/sendmail")
+//     .post(myController.sendmail)
 // Matches with "/api/books"
 router.route("/books")
 
     // Return all saved books as JSON
-    .get(booksController.findAll)
+    .get(myController.findAll)
 
     // save a new book to the database.
-    .post(booksController.create);
+    .post(myController.create);
 
 // Matches with "/api/books/:id"
 router
     .route("/books/:id")
-    //   .get(booksController.findById)
-    //   .put(booksController.update)
+    //   .get(myController.findById)
+    //   .put(myController.update)
 
     // delete a book from the database by Mongo `_id`.
 
-    .delete(booksController.remove);
+    .delete(myController.remove);
 
 module.exports = router;
 
